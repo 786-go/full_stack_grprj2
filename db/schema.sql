@@ -1,0 +1,8 @@
+CREATE TABLE recipes (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    ingredients VARCHAR(1000) NOT NULL,
+    directions VARCHAR(2000) NOT NULL,
+    userid VARCHAR(5) NOT NULL
+);
+
