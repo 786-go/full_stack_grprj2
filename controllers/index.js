@@ -7,7 +7,9 @@ const apiRoutes = require("./api");
 router.use("/api", apiRoutes);
 
 router.get("/", (req, res) => {
-  res.render("../views/testviews.hbs", { title: "Recipes" });
+  res.render("../views/testviews.hbs", {
+    title: "Recipes"
+  });
 });
 
 router.get("/login", (req, res) => {
