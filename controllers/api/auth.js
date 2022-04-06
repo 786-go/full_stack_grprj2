@@ -12,4 +12,4 @@ router.post("/", (req, res) => {
         })
 });
 
-module.export = router;
+module.exports = router;

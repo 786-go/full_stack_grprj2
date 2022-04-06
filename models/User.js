@@ -1,4 +1,5 @@
 const {
+    // Model is a sequelize class
     Model,
     DataTypes
 } = require('sequelize');
@@ -6,7 +7,7 @@ const {
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-// create our User model
+// create our User model that takes on attributes from Model
 class User extends Model {
     // set up method to run on instance data (per user) to check password
     // bcrypt has methods to decrypt the password
@@ -46,7 +47,7 @@ User.init({
 }, {
     hooks: {
         // set up beforeCreate lifecycle "hook" functionality to intercept the below
-        // hash password wihtout storing it in the db
+        // hash password without storing it in the db
         async beforeCreate(newUserData) {
             newUserData.password = await bcrypt.hash(newUserData.password, 10);
             return newUserData;
