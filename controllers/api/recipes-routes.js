@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Router } = require('express');
 const { User, Recipes } = require('../models');
 
 // GET all recipes 
@@ -76,3 +77,46 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
       }
     })
+
+
+// Update route
+    router.put('/:id', (req, res) => {
+        //Calls the update method on the Book model
+        Recipes.update(
+          {
+            // All the fields you can update and the data attached to the request body.
+            name: req.body.name,
+            ingredients: req.body.ingredients,
+            directions: req.body.directions,
+          },
+          {
+            // Gets a book based on the book_id given in the request parameters
+            where: {
+              id: req.params.id,
+            },
+          }
+        )
+          .then((updatedRecipes) => {
+            res.json(updatedRecipes);
+          })
+          .catch((err) => {
+            console.log(err);
+            res.json(err);
+          });
+      });
+      
+
+      router.delete('/id', (req, res) => {
+        // Looks for the books based book_id given in the request parameters
+        Recipes.destroy({
+          where: {
+            id: req.params.id,
+          },
+        })
+          .then((deletedRecipe) => {
+            res.json(deletedRecipe);
+          })
+          .catch((err) => res.json(err));
+      });
+
+      module.exports = router
