@@ -1,20 +1,26 @@
 async function commentHandler(event) {
   event.preventDefault();
 
-  const comment = document.querySelector("post-comment").value.trim();
+  const comment = document
+    .querySelector('textarea[name="comment-body"]')
+    .value.trim();
+  const post_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
 
-  if (comment) { //need to connect to api/comment route for fetch
+  if (comment) {
+    //need to connect to api/comment route for fetch
     const response = await fetch("/api/comment", {
       method: "post",
       body: JSON.stringify({
-        email,
-        password,
+        post_id,
+        comment,
       }),
       headers: { "Content-Type": "application/json" },
     });
 
-    if (response.ok) { 
-      document.location.replace("/dashboard/"); //need to sort out the replacement for "/dashboard" to be relevant to our project
+    if (response.ok) {
+      document.location.reload(); //need to sort out the replacement for "/dashboard" to be relevant to our project
     } else {
       alert(response.statusText);
     }
