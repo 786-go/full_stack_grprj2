@@ -3,7 +3,7 @@ async function commentHandler(event) {
 
   const comment = document.querySelector("post-comment").value.trim();
 
-  if (comment) {
+  if (comment) { //need to connect to api/comment route for fetch
     const response = await fetch("/api/comment", {
       method: "post",
       body: JSON.stringify({
@@ -13,13 +13,14 @@ async function commentHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
-    if (response.ok) {
-      document.location.replace("/dashboard/");
+    if (response.ok) { 
+      document.location.replace("/dashboard/"); //need to sort out the replacement for "/dashboard" to be relevant to our project
     } else {
       alert(response.statusText);
     }
   }
 }
 
+//In comment.hbs for class = "comment-form"
 document.querySelector(".comment-form");
 addEventListener.submit("submit", commentHandler);
