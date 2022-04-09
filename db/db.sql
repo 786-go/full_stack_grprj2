@@ -4,6 +4,3 @@ USE sexy_db;
 -- DROP DATABASE IF EXISTS ;
 -- CREATE DATABASE ;
 -- USE ;
-
-CREATE DATABASE goodies;
-USE goodies;
