@@ -1,3 +1,11 @@
+DROP DATABASE IF EXISTS sexy_db;
+CREATE DATABASE sexy_db;
+USE sexy_db;
+-- DROP DATABASE IF EXISTS ;
+-- CREATE DATABASE ;
+-- USE ;
+-- sequalize goes here
+
 CREATE TABLE users (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(10) NOT NULL,
@@ -13,7 +21,3 @@ CREATE TABLE recipes (
     directions VARCHAR(2000) NOT NULL,
     user_id INT references users(id)
 );
-
-
-
-

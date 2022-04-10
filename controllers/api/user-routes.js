@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {
   User
-} = require('../../models/Users'); //ADDED /Users to end of path here on 4/7/2022 and code worked 
+} = require('../../models/Users'); //ADDED /Users to end of path here on 4/7/2022 and server worked 
 
 // CREATE new user
 router.post('/', async (req, res) => {
