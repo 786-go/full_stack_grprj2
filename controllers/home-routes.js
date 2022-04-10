@@ -87,6 +87,5 @@ router.get("/login", (req, res) => {
 
 
 res.render('post', {
-post
-});
+  post
 });

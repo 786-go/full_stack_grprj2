@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { User } = require('../../models/Users'); //ADDED /Users to end of path here on 4/7/2022 and code worked 
+const {
+  User
+} = require('../../models/Users'); //ADDED /Users to end of path here on 4/7/2022 and code worked 
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -33,7 +35,9 @@ router.post('/login', async (req, res) => {
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({
+          message: 'Incorrect email or password. Please try again!'
+        });
       return;
     }
 
@@ -42,7 +46,9 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({
+          message: 'Incorrect email or password. Please try again!'
+        });
       return;
     }
 
@@ -51,7 +57,10 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({
+          user: dbUserData,
+          message: 'You are now logged in!'
+        });
     });
   } catch (err) {
     console.log(err);

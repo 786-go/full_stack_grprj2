@@ -12,6 +12,7 @@ const {
 
 // GET all recipes 
 router.get('/', async (req, res) => {
+  console.log('=============');
   try {
     const recipesData = await Recipes.findAll({
       include: [{
