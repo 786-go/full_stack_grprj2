@@ -1,5 +1,5 @@
-const sequelize = require('../config/connection');
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const {
   Comment,
   Recipes,
@@ -33,6 +33,9 @@ router.get('/', (req, res) => {
       ]
     })
     .then(dbPostData => {
+      // pass a single post to test the homepage template
+      console.log(dbPostData[0]);
+      res.render('homepage', dbPostData[0]);
       const posts = dbPostData.map(post => post.get({
         plain: true
       }));
