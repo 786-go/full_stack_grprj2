@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({});
+const routes = require('./controllers/');
 const router = require("./controllers/index");
 // import { engine } from 'express-handlebars';
 const sequelize = require("./config/connection");
