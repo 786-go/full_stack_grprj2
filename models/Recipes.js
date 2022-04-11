@@ -35,12 +35,13 @@ Recipes.init({
       model: 'user',
       key: 'id',
     },
-  },
+  }
 }, {
   sequelize,
   freezeTableName: true,
   underscored: true,
   modelName: 'recipes',
+  timestamps: true
 });
 
 module.exports = Recipes;

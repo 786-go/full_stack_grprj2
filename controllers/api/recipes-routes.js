@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const {
-  Router
-} = require('express');
+const sequelize = require('../../config/connection');
+// const {
+//   Router
+// } = require('express');
 const {
   User,
   Recipes,
   Comment,
 
-} = require('../models');
+} = require('../../models');
 
 // GET all recipes 
 router.get('/', async (req, res) => {
@@ -56,7 +56,8 @@ router.get('/:id', async (req, res) => {
 
     res.render('homepage', {
       formattedRecipes,
-      loggedIn: req.session.loggedIn,
+      // for logged in check
+      // loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -66,9 +67,10 @@ router.get('/:id', async (req, res) => {
 
 
 
-//Post
+// Post recipe
 router.post('/', async (req, res) => {
   try {
+    console.log("TEST MESSAGE LKGSALJGFSDA");
     const newRecipe = await Recipes.create(req.body);
 
     if (!newRecipe) {
@@ -118,7 +120,7 @@ router.put('/:id', (req, res) => {
 
 
 router.delete('/id', (req, res) => {
-  // Looks for the books based book_id given in the request parameters
+  // Looks for the recipes based recipe_id given in the request parameters
   Recipes.destroy({
       where: {
         id: req.params.id,

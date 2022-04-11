@@ -5,5 +5,5 @@ USE sexy_db;
 -- CREATE DATABASE ;
 -- USE ;
 
-CREATE DATABASE goodies;
-USE goodies;
+-- CREATE DATABASE goodies;
+-- USE goodies;
