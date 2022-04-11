@@ -3,27 +3,30 @@
 <h1>Hello, world!</h1>
 <p>{{{title}}}</p>
 <h1>testing big sexy</h1>
-
+<form class = "new-post-form"></form>
 <div>
-    <form>
-        <label>Enter meal name</label>
-        <input></input>
-    </form>
+    
+        <label for="name">Enter meal name</label>
+        <input type = "text" name = "name"></input>
+  </div>
+    <div>
+        <label for="ingredients">Enter ingredients</label>
+        <input type = "text" name="ingredients"></input>
+    </div>
+<div>
+        <label for="post_date">Date of Post</label>
+        <input type = "text" name="post_date"></input>
+    </div>
 
-    <form>
-        <label>Enter ingredients</label>
-        <input></input>
-    </form>
-
-    <form>
+  <div>
         <label>Enter directions</label>
-        <input></input>
-    </form>
+      <input type = "text" name="directions"></input>
+      </div>  
+    
+        <button onclick = "newFormHandler(event)" type="submit">Submit Recipe
 
-    <form>
-        <label>Enter user_id</label>
-        <input>
-        <button>Submit</button>
+        </button>
+        
     </form>
 </div>
 
@@ -54,6 +57,7 @@
   {{/each}}
 </ol>
 
+<script src = "/js/add-recipe.js"></script>
 {{!-- <ol class="post-list">
   {{#each posts as |post|}}
   <li>
