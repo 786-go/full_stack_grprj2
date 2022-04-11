@@ -32,23 +32,27 @@
 
 </div>
 
+{{!-- following the lessons in  14.1 below --}}
 
-{{!-- <ol class="post-list">
+<ol class="post-list">
+ {{!-- for each loop expects us to supply something called "posts" --}}
+  {{#each posts}}
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
+        <a href="{{post_url}}" target="_blank">{{name}}</a>
         <span>({{post_url}})</span>
       </div>
       <div class="meta">
-        {{vote_count}} point(s) by {{user.username}} on
+        {{vote_count}} point(s) by {{user.email}} on
         {{created_at}}
         |
         <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
       </div>
     </article>
   </li>
-</ol> --}}
+  {{/each}}
+</ol>
 
 {{!-- <ol class="post-list">
   {{#each posts as |post|}}
