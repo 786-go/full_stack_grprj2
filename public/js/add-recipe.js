@@ -20,7 +20,7 @@ async function newFormHandler(event) {
   });
   //need to figure out the location of the document we are replacing
   if (response.ok) {
-    document.location.replace("recipes");
+    document.location.replace("/");
   } else {
     alert(response.statusText);
   }

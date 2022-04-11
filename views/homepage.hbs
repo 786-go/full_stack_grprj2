@@ -44,14 +44,22 @@
     <article class="post">
       <div class="title">
         <a href="{{name}}" target="_blank">{{name}}</a>
-        <span>({{name}})</span>
+        {{!-- <span>{{ingredients}}</span> --}}
+        
+      
       </div>
-      <div class="meta">
+        
+    
+
+    <div class="meta">
         {{ingredients}} point(s) by {{directions}} on
         {{post_date}}
         {{!-- |//DOES THIS "/post" NEED A DIFFERENT ADDRESS? --}}
         <a href="/post/{{id}}">{{recipes.length}} comment(s)</a>
       </div>
+<div>
+      <a href="{{ingredients}}" target = "_blank">{{ingredients}}</a>
+</div>     
     </article>
   </li>
   {{/each}}
