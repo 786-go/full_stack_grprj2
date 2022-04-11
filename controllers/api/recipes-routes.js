@@ -16,8 +16,8 @@ router.get('/', async (req, res) => {
   try {
     const recipesData = await Recipes.findAll({
       include: [{
-        model: User,
-        attributes: ['username'],
+        model: Recipes,
+        attributes: ['recipes'],
       }, ],
     });
 

@@ -1,7 +1,7 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const recipeName = document.querySelector('input[name="name"]').value;
+  const name = document.querySelector('input[name="name"]').value;
   const ingredients = document.querySelector('input[name="ingredients"]').value;
   const post_date = document.querySelector('input[name="post_date"]').value;
   const directions = document.querySelector('input[name="directions"]').value;
@@ -9,7 +9,7 @@ async function newFormHandler(event) {
   const response = await fetch(`/api/recipes`, {
     method: "POST",
     body: JSON.stringify({
-      recipeName,
+      name,
       ingredients,
       post_date,
       directions,
@@ -18,9 +18,9 @@ async function newFormHandler(event) {
       "Content-Type": "application/json",
     },
   });
-
+  //need to figure out the location of the document we are replacing
   if (response.ok) {
-    document.location.replace("/dashboard");
+    document.location.replace("recipes");
   } else {
     alert(response.statusText);
   }
