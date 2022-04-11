@@ -2,6 +2,7 @@
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
+// create conneciton to database
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
