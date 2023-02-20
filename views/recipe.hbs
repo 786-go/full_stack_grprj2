@@ -1,13 +1,9 @@
-{{!-- <article class="post">
-      <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>({{post_url}})</span>
-      </div>
-      <div class="meta">
-       {{user.email}} 
-       {{!-- on    {{created_at}} --}}
-{{!-- |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div>
-    </article> --}}
-{{!-- --}} 
+<article class="post">
+{{!-- use dot notation to call the data within the recipe object.  Won't call the object,
+jsut the data within the object --}}
+<h2>
+  {{recipe.name}}
+</h2>
+<p>{{recipe.ingredients}}</p>
+<p>{{recipe.directions}}</p>
+    </article>
